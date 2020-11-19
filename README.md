@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# The steps I took to build the project and to run it
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+	node -v
+	npx create-react-app mern-exercise-tracker
 
-## Available Scripts
+npx executes node modules withour installing them.
+The above command failed so I had to follow some guidance from stackoverflow.
 
-In the project directory, you can run:
+	npm cache clean --force
+	sudo npm install -g npm@next
+	npx create-react-app mern-exercise-tracker
 
-### `npm start`
+Clearing the cache and installing the latest version of npm fixed it
+Next I created a backend folder to work on the backend first
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+	cd mern-exercise-tracker
+	mkdir backend
+	cd backend
+	npm init -y
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To createa package.json file and install dependency modules
 
-### `npm test`
+	npm install express cors mongoose dotenv
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- *express:* Lighweight and fast web framework for Node.js.
+- *cors:* *Cross Origin Resource Sharin* Allows Ajax requests to skip the *Same Origin Policy* and access resources from remote hosts. The cors package is express middleware with options to access something outside of our server from our server.
+- *mongoose:* Interacting with MongoDB through Node.js simpler.
+- *dotenv:* Load environment variables from a .env file into process.env so I don't have to set environment variables in my linux box and only store them in a file.
 
-### `npm run build`
+	sudo npm install -g nodemon
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Makes development easier by automatically restarting the node app when file changes in the directory are detected.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+	touch server.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Where my server code will go.
+After setting up an initial express server with cors
 
-### `npm run eject`
+	nodemon server
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After adding the code to connect to ATLAS through mongoose I need to set enviranmental variables for database connection I get from MongoDB ATLAS site in the .env file.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+	touch .env
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I whitelisted my current IP address on MongoDB atlas and created a user with a secure password. 
+After that I copied and pasted the connection string on the site to my .env file as the ATLAS_URI variable replacing my login credentials and the server connected.
+I had an error because I misspelled 'connect' as 'conect' on my call to mongoose that turned my mongoose connection undefined and crashed the server but I fixed that.
+After that I made the database schema models for the exercises and users.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+	mkdir models	
+	touch models/exercise.model.js
+	touch models/user.model.js
 
-## Learn More
+After creating the schemas and the restrictions and exporting them I needed to create a routes directory to put in the *CRUD* operations code.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+	mkdir routes
+	touch routes/exercises.js
+	touch routes/users.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
