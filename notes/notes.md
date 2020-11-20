@@ -31,6 +31,7 @@ and *Mongoose:* Simple, schema based solution to model application data.
 # MongoDB Documents
 - BSON Types
 
+```
 	{
 		name : 'Beau Carnes',
 		title : 'Developer and Teacher',
@@ -44,6 +45,7 @@ and *Mongoose:* Simple, schema based solution to model application data.
 		employee_number : 1234,
 		location : [449901, 123.0262]
 	}
+```
 
 # MongoDB ObjectId
 	
@@ -52,5 +54,15 @@ and *Mongoose:* Simple, schema based solution to model application data.
 Unix timestamp: 4 bytes		Random value: 5 bytes		Count: 3 bytes
 
 MongoDB handles it but I can write them myself; they only have to be unique.
+
+# React
+
+- It lets you compose large and complex user interfaces from small and isolated pieces of code called components.  
+- Components tell React what we want to see on the screen.
+- When data changes React will update our components.
+- A React component takes in a parameters named 'props' and returns a hierarchy of views to display through the render method.
+- It uses JSX which is converted into HTML when it goes through preprocessing.
+- JSX comes with the power of JavaScript within braces.
+- Instead of class it uses className.
 
 

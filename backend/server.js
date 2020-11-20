@@ -13,7 +13,7 @@ app.use(express.json());
 
 const uri = process.env.ATLAS_URI; // Where database login credentials go
 /* useUnifiedTopology is set to use the new Server Discovery and Monitoring 
- * engine ass well as the other parameters
+ * engine as well as the other parameters
  */
 mongoose.connect(uri, { 
 	useNewUrlParser: true, 
@@ -29,7 +29,9 @@ const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 
 /* This sets up the localhost:5000/exercises and localhost:500/users CRUD 
- * operations '/': get and '/add': post
+ * operations '/': get and '/add': post.
+ * Here we integrate the exported routers with their associated database model
+ * policy for CRUD operations.
  */
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);

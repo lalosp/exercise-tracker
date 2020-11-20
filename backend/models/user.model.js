@@ -6,7 +6,9 @@ const userSchema = new Schema({
 	username: {
 		type: String,
 		required: true,
+		// This doesn't let me have duplicate users.
 		unique: true,
+		// This takes out whitespace that the user may have input.
 		trim: true,
 		minlength: 3
 	}

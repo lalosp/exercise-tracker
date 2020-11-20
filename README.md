@@ -1,9 +1,7 @@
 # The steps I took to build the project and to run it
 
-```bash
 	node -v
 	npx create-react-app mern-exercise-tracker
-```
 
 npx executes node modules withour installing them.
 The above command failed so I had to follow some guidance from stackoverflow.
@@ -59,8 +57,9 @@ After creating the schemas and the restrictions and exporting them I needed to c
 	touch routes/exercises.js
 	touch routes/users.js
 
-I added routes for '/' and '/add' on both localhost:5000/users and localhost:5000/exercises.
-I had a problem with including ';' inside the '.then(() => res.json('Exercise added!);)' on both models/exercises.js and models/users.js; Leaving them without the ';' corrected the error.
-The server connected to MongoDB Atlas but it gave me a weird warning called UnhandledPromiseRejectionWaring about throwing inside an async function without a .catch() block or by rejecting a promise which was not handled with .catch().
-It also gave me the DeprecationWarning: in future versions of Node.js promise rejections which are not handled will terminate the server.
+I added routes for '/' and '/add' on both localhost:5000/users and localhost:5000/exercises.  
+I had a problem with including ';' inside the '.then(() => res.json('Exercise added!);)' on both models/exercises.js and models/users.js; Leaving them without the ';' corrected the error.  
+The server connected to MongoDB Atlas but it gave me a weird warning called UnhandledPromiseRejectionWaring about throwing inside an async function without a .catch() block or by rejecting a promise which was not handled with .catch().  
+It also gave me the DeprecationWarning: in future versions of Node.js promise rejections which are not handled will terminate the server.  
+After that I added routes for get: '/:id', post: '/update/:id' and delete: '/:id' on localhost:5000/exercises and checked the API with Insomnia. I had various errors because I forgot to add a 'path' on router.route().
 
