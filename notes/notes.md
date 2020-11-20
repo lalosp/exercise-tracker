@@ -31,7 +31,7 @@ and *Mongoose:* Simple, schema based solution to model application data.
 # MongoDB Documents
 - BSON Types
 
-```
+```bson
 	{
 		name : 'Beau Carnes',
 		title : 'Developer and Teacher',
