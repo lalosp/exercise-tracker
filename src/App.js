@@ -1,3 +1,4 @@
+// What's the difference between import and require?
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,4 +23,5 @@ function App() {
   );
 }
 
+// Why export default and not module.exporst?
 export default App;

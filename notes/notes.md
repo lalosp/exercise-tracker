@@ -65,4 +65,17 @@ MongoDB handles it but I can write them myself; they only have to be unique.
 - JSX comes with the power of JavaScript within braces.
 - Instead of class it uses className.
 
+# Git - Github
+
+When I want to remove a file folder from github but not locally I can do:
+
+	git rm -r --cached directory-name/
+	git rm --cached filename
+
+Add the directory or file exception on .gitignore and then: 
+
+	git add *
+	git commit -m 'removed file/directory from github'
+	git push
+
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// We aren't going to use custom CSS
+//import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+/* This is the main rendering engine that renders the App.js inside the 'root'
+ * <div> in ../public/index.html.
+ */
 ReactDOM.render(
   <React.StrictMode>
     <App />
