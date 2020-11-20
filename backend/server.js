@@ -28,6 +28,9 @@ connection.once('open', () => {
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 
+/* This sets up the localhost:5000/exercises and localhost:500/users CRUD 
+ * operations '/': get and '/add': post
+ */
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 
