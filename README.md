@@ -1,7 +1,9 @@
 # The steps I took to build the project and to run it
 
+```bash
 	node -v
 	npx create-react-app mern-exercise-tracker
+```
 
 npx executes node modules withour installing them.
 The above command failed so I had to follow some guidance from stackoverflow.

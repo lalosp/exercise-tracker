@@ -31,7 +31,6 @@ and *Mongoose:* Simple, schema based solution to model application data.
 # MongoDB Documents
 - BSON Types
 
-```json
 	{
 		name : 'Beau Carnes',
 		title : 'Developer and Teacher',
@@ -45,7 +44,6 @@ and *Mongoose:* Simple, schema based solution to model application data.
 		employee_number : 1234,
 		location : [449901, 123.0262]
 	}
-```
 
 # MongoDB ObjectId
 	
